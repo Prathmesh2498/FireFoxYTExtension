@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "The not evil youtube",
+  "version": "1.0",
+  "description": "Removes unwanted videos",
+  "icons": {
+    "48": "icon.png"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+  "browser_action": {
+    "default_icon": "yt_icon.png",
+    "default_title": "DBE",
+    "default_popup": "index.html"
+  }
+}
+
