@@ -3,5 +3,5 @@
       not fall prey to the reccomendation algorithm and waste time.
       
       I have not released this on the firefox store, you will have to manually install this in firefox. Change array in the hide.js file with the channels and 
-      keyworks you want to pass through the filter.
+      keywords you want to pass through the filter. Once you install you will have click on the button to filter the videos.
      
