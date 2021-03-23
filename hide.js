@@ -1,6 +1,6 @@
 
 function trigger() {
-    var allowedArray = ["Andrew Huberman", "freeCodeCamp.org", "Ecnerwala", "Engineering with Utsav","sudoCode", "3Blue1Brown", "Clément Mihailescu", "Errichto", "Akshay Saini", "MIT OpenCourseWare", "stanfordonline"]
+    var allowedArray = ["freeCodeCamp.org", "ecnerwala", "Engineering with Utsav", "sudoCODE", "3Blue1Brown", "Clément Mihailescu", "Errichto", "Akshay Saini", "MIT OpenCourseWare", "stanfordonline", "Andrew Huberman"];
     console.log("Triggered", allowedArray);
     if (window.location.href === "https://www.youtube.com/") {
         var e = null;
@@ -12,7 +12,6 @@ function trigger() {
             for (let j = 0; j < allowedArray.length; j++) {
                 if (i.innerText.includes(allowedArray[j])) {
                     allowed = true;
-                    break;
                 }
             }
             if (!allowed) {
@@ -31,13 +30,13 @@ function trigger() {
     toolbar.remove();
 
     let chips = document.getElementById("chips");
-    if(chips){
+    if (chips) {
         chips.click();
         chips.remove();
     }
 
     let sections = document.getElementById("contentContainer");
-    if(sections){
+    if (sections) {
         sections.remove();
     }
 
