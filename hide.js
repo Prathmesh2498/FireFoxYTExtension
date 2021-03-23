@@ -1,6 +1,6 @@
 
 function trigger() {
-    var allowedArray = ["Andrew Huberman", "freeCodeCamp.org", "Ecnerwala", "Engineering with Utsav", "Coding", "Code", "thenewboston"]
+    var allowedArray = ["Andrew Huberman", "freeCodeCamp.org", "Ecnerwala", "Engineering with Utsav","sudoCode", "3Blue1Brown", "Clément Mihailescu", "Errichto", "Akshay Saini", "MIT OpenCourseWare", "stanfordonline"]
     console.log("Triggered", allowedArray);
     if (window.location.href === "https://www.youtube.com/") {
         var e = null;
