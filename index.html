@@ -2,11 +2,22 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
     <style>
         #maindiv {
             margin-left: 3%;
             margin-right: 3%;
             margin-top: 5%;
+            align-items: center;
+            align-content: center;
+        }
+
+        #global {
+            background-image: linear-gradient(to bottom, #63645f, #f5f1f1);
         }
 
         .bton {
@@ -20,18 +31,25 @@
         .myBtn {
             margin-top: 5%;
             margin-bottom: 5%;
-            padding: 10px;
-
         }
     </style>
 </head>
 
-<body>
+<body id="global">
     <div id="maindiv">
-        <div>
-            <div class="bton remove myBtn" id="remove" style="background-color: yellowgreen;">Click to remove Suggestions</div>
+        <h4 class="text">Enter Names of Allowed Channels:-</h3>
+        <div class="form-group">
+            <div class="myBtn form-group"><input class="form-control"
+                    placeholder="Enter allowed channel names separated by commas" id="ip" type="text" /></div>
+            <small id="emailHelp" class="form-text font-weight-bolder">Example: Casey Neistat,Peter Mckinnon</small>
         </div>
-        <p><b><u>Thanks for using DBE Extension!</u></b></p>
+        <div class="form-group">
+            <div class="bton myBtn btn btn-primary" id="submit">Click to allow
+                channels</div>
+            <div class="bton myBtn btn btn-success" id="remove">Click to remove
+                Suggestions</div>
+        </div>
+        <p><strong><u>Thanks for using DBE Extension!</u></strong></p>
     </div>
     <script src="fe.js"></script>
 </body>

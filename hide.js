@@ -1,7 +1,25 @@
 
+if (!localStorage.getItem("allowedArray")) {
+    let allowedArrayString = "freeCodeCamp.org,ecnerwala,Engineering with Utsav,sudoCODE,3Blue1Brown,Clément Mihailescu, Errichto,Akshay Saini,MIT OpenCourseWare,stanfordonline,Andrew Huberman";
+    localStorage.setItem("allowedArray",allowedArrayString);
+    console.log("First Write Done")
+}
+
+function addAllowedChannel(channelName="default"){
+    if(channelName === "default"){  
+        return;
+    }
+    else{
+        let currentString = localStorage.getItem("allowedArray");
+        let allowedArrayString = currentString + "," + channelName;
+        localStorage.setItem("allowedArray", allowedArrayString);
+        console.log("Added channel ", channelName);
+    }
+}
+
 function trigger() {
-    var allowedArray = ["freeCodeCamp.org", "ecnerwala", "Engineering with Utsav", "sudoCODE", "3Blue1Brown", "Clément Mihailescu", "Errichto", "Akshay Saini", "MIT OpenCourseWare", "stanfordonline", "Andrew Huberman"];
-    console.log("Triggered", allowedArray);
+    var allowedArray = localStorage.getItem("allowedArray").split(',')
+    //console.log("Triggered", allowedArray);
     if (window.location.href === "https://www.youtube.com/") {
         var e = null;
         e = document.getElementById("contents").childNodes;
@@ -45,6 +63,9 @@ function trigger() {
 browser.runtime.onMessage.addListener((message) => {
     if (message.command === "run") {
         trigger();
+    }
+    if (message.command === "ip") {
+        addAllowedChannel(message.data);
     }
 });
 

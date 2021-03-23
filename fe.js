@@ -5,8 +5,9 @@ function listenForClicks() {
             command: "run",
         });
     }
-
-    document.addEventListener("click", (e) => {
+    
+    let elem = document.getElementById("remove");
+    elem.addEventListener("click", (e) => {
         browser.tabs.query({ active: true, currentWindow: true })
             .then(trigger)
             .catch(() => {
@@ -14,7 +15,30 @@ function listenForClicks() {
             });
 
     });
+    
+    
+    
+    
+    function triggerInput(tabs) {
+        let value = document.getElementById("ip").value;
+        document.getElementById("ip").innerText = "";
+        browser.tabs.sendMessage(tabs[0].id, {
+            command: "ip",
+            data: value
+        });
+    }
+
+    let ele = document.getElementById("ip");
+    ele.addEventListener("blur", (e) => {
+        browser.tabs.query({ active: true, currentWindow: true })
+            .then(triggerInput)
+            .catch(() => {
+                console.error("Script Broke")
+            });
+
+    });
 }
+
 
 /**
  * When the popup loads, inject a content script into the active tab,
@@ -26,16 +50,4 @@ browser.tabs.executeScript({ file: "/hide.js" })
     .catch(() => {
         console.log("Script Broke");
     });
-
-/*
-
-    function addChannelNames() {
-        let data = document.getElementById("channelNames").value;
-        console.log(data);
-        browser.tabs.sendMessage(tabs[0].id, {
-            command: "addChannelNames",
-            data: data
-        });
-    }
-*/
 
