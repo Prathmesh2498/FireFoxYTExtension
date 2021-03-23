@@ -21,15 +21,14 @@ function listenForClicks() {
     
     function triggerInput(tabs) {
         let value = document.getElementById("ip").value;
-        document.getElementById("ip").innerText = "";
         browser.tabs.sendMessage(tabs[0].id, {
             command: "ip",
             data: value
         });
     }
 
-    let ele = document.getElementById("ip");
-    ele.addEventListener("blur", (e) => {
+    let ele = document.getElementById("submit");
+    ele.addEventListener("click", (e) => {
         browser.tabs.query({ active: true, currentWindow: true })
             .then(triggerInput)
             .catch(() => {
@@ -37,6 +36,26 @@ function listenForClicks() {
             });
 
     });
+
+
+    function clearStorage(tabs) {
+        browser.tabs.sendMessage(tabs[0].id, {
+            command: "armageddon"
+        });
+    }
+
+    let btn = document.getElementById("deleteAll");
+    btn.addEventListener("click", (e) => {
+        browser.tabs.query({ active: true, currentWindow: true })
+            .then(clearStorage)
+            .catch(() => {
+                console.error("Script Broke")
+            });
+
+    });
+
+
+
 }
 
 

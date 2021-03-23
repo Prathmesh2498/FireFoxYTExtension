@@ -38,18 +38,23 @@
 <body id="global">
     <div id="maindiv">
         <h4 class="text">Enter Names of Allowed Channels:-</h3>
-        <div class="form-group">
-            <div class="myBtn form-group"><input class="form-control"
-                    placeholder="Enter allowed channel names separated by commas" id="ip" type="text" /></div>
-            <small id="emailHelp" class="form-text font-weight-bolder">Example: Casey Neistat,Peter Mckinnon</small>
-        </div>
-        <div class="form-group">
-            <div class="bton myBtn btn btn-primary" id="submit">Click to allow
-                channels</div>
-            <div class="bton myBtn btn btn-success" id="remove">Click to remove
-                Suggestions</div>
-        </div>
-        <p><strong><u>Thanks for using DBE Extension!</u></strong></p>
+            <div class="form-group">
+                <div class="myBtn form-group"><input class="form-control"
+                        placeholder="Enter allowed channel names separated by commas" id="ip" type="text" /></div>
+                <small id="emailHelp" class="form-text font-weight-bolder">Example: Casey Neistat,Peter Mckinnon</small>
+            </div>
+            <div class="form-group">
+                <div class="bton myBtn btn btn-primary btn-block" id="submit"> Allow above
+                    channels</div>
+                <div class="bton myBtn btn btn-success btn-block" id="remove"> Remove
+                    suggestions from Home</div>
+                <div class="bton myBtn btn btn-danger btn-block" id="deleteAll"> Remove
+                    all allowed channels
+                    <small class="form-text font-weight-bolder"><u>All Stored Channels will be deleted!</u></small>
+                </div>
+
+            </div>
+            <p><strong><u>Thanks for using DBE Extension!</u></strong></p>
     </div>
     <script src="fe.js"></script>
 </body>

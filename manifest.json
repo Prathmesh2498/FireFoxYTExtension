@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "The not evil youtube",
-  "version": "2.0.1",
-  "description": "Removes unwanted videos",
+  "version": "3.0",
+  "description": "Removes unwanted videos from suggestions on homepage as well as suggestion tab when the video is playing.",
   "icons": {
     "48": "yt_icon.png"
   },
