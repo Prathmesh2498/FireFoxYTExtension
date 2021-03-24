@@ -1,12 +1,12 @@
 function clearStorage(){
     localStorage.clear();
-    console.log("All channel names deleted!");
+    //console.log("All channel names deleted!");
 }
 
 if (!localStorage.getItem("allowedArray")) {
     let allowedArrayString = "freeCodeCamp.org,ecnerwala,Engineering with Utsav,sudoCODE,3Blue1Brown,Clément Mihailescu, Errichto,Akshay Saini,MIT OpenCourseWare,stanfordonline,Andrew Huberman";
     localStorage.setItem("allowedArray", allowedArrayString);
-    console.log("First Write Done")
+    //console.log("First Write Done")
 }
 
 function addAllowedChannel(channelName = "default") {
@@ -19,7 +19,7 @@ function addAllowedChannel(channelName = "default") {
         if (array.indexOf(channelName) === -1) {
             let allowedArrayString = currentString + "," + channelName;
             localStorage.setItem("allowedArray", allowedArrayString);
-            console.log("Added channel ", channelName);
+            //console.log("Added channel ", channelName);
         }
 
     }
@@ -27,7 +27,7 @@ function addAllowedChannel(channelName = "default") {
 
 function trigger() {
     var allowedArray = localStorage.getItem("allowedArray").split(',')
-    console.log("Triggered", allowedArray);
+    //console.log("Triggered", allowedArray);
     if (window.location.href === "https://www.youtube.com/") {
         var e = null;
         e = document.getElementById("contents").childNodes;
