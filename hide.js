@@ -4,6 +4,7 @@ function clearStorage(){
 }
 
 if (!localStorage.getItem("allowedArray")) {
+    //A sample array of channel names.
     let allowedArrayString = "freeCodeCamp.org,ecnerwala,Engineering with Utsav,sudoCODE,3Blue1Brown,Clément Mihailescu, Errichto,Akshay Saini,MIT OpenCourseWare,stanfordonline,Andrew Huberman";
     localStorage.setItem("allowedArray", allowedArrayString);
     //console.log("First Write Done")
@@ -68,6 +69,12 @@ function trigger() {
 
 }
 
+
+/*  
+    This is a listener set when the pop up loads and 
+    is called when we call browser.tabs.query() from fe.js
+    Based on agrument passed, it calls different functions.
+*/
 browser.runtime.onMessage.addListener((message) => {
     if (message.command === "run") {
         trigger();
