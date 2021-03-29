@@ -32,6 +32,9 @@ function listenForClicks() {
         browser.tabs.sendMessage(tabs[0].id, {
             command: "ip",
             data: value
+        }).then(()=>{
+            let msg = document.getElementById("success");
+            msg.hidden = false;
         });
     }
 
@@ -53,6 +56,9 @@ function listenForClicks() {
     function clearStorage(tabs) {
         browser.tabs.sendMessage(tabs[0].id, {
             command: "armageddon"
+        }).then(()=>{
+            let msg = document.getElementById("del");
+            msg.hidden = false;
         });
     }
 
