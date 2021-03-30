@@ -20,7 +20,7 @@ function addAllowedChannel(channelName = "default") {
         if (array.indexOf(channelName) === -1) {
             let allowedArrayString = currentString + "," + channelName;
             localStorage.setItem("allowedArray", allowedArrayString);
-            //console.log("Added channel ", channelName);
+           //console.log("Added channel ", channelName);
         }
 
     }
@@ -28,7 +28,7 @@ function addAllowedChannel(channelName = "default") {
 
 function trigger() {
     var allowedArray = localStorage.getItem("allowedArray").split(',')
-    //console.log("Triggered", allowedArray);
+    console.log("Triggered", allowedArray);
     if (window.location.href === "https://www.youtube.com/") {
         var e = null;
         e = document.getElementById("contents").childNodes;
@@ -58,7 +58,7 @@ function trigger() {
 
     let chips = document.getElementById("chips");
     if (chips) {
-        chips.click();
+        //chips.click();
         chips.remove();
     }
 

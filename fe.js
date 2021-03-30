@@ -4,7 +4,7 @@ function listenForClicks() {
         This function triggers the listener in hide.js to 
         call the function "trigger" in hide.js
     */
-    function trigger(tabs) {
+    function triggerFromFrontEnd(tabs) {
         browser.tabs.sendMessage(tabs[0].id, {
             command: "run",
         });
@@ -14,7 +14,7 @@ function listenForClicks() {
     let elem = document.getElementById("remove");
     elem.addEventListener("click", (e) => {
         browser.tabs.query({ active: true, currentWindow: true })
-            .then(trigger)
+            .then(triggerFromFrontEnd)
             .catch(() => {
                 console.error("Script Broke")
             });
